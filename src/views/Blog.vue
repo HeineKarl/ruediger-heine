@@ -1,18 +1,17 @@
 <template>
-  <div class="about">
+  <div class="blog">
     <div class="icon">
       <i class="fas fa-wrench"></i>
     </div>
-    <h1>Under construction</h1>
+    <h1>This is Blog coming soon!</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "About",
+  name: "Blog",
 };
 </script>
-
 
 <style lang="scss">
 @mixin flex-center($justify: center, $dir: row) {
@@ -22,13 +21,12 @@ export default {
   justify-content: $justify;
 }
 
-.about {
+.blog {
   @include flex-center(center, column);
-  // background: lightgreen;
+  // background: pink;
   height: 90vh;
 
   h1 {
-    text-align: center;
     padding: 1em 0 0 0;
   }
 }

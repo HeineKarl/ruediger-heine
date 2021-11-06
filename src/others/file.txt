@@ -1,0 +1,140 @@
+:root {
+  --heading-lcr: #edae75;
+  --txt-clr: #2d2d2d;
+  --bg-clr: #eee;
+  --font-pat: "Patua One", cursive;
+  --font-src: "Source Serif Pro";
+}
+
+@mixin flex-center($justify: center, $dir: row) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: center;
+  justify-content: $justify;
+}
+
+.home {
+  // justify-items: center;
+  padding: 0 1em;
+
+  display: grid;
+
+  // top or bottom
+  grid-template-rows: 100px 100px 170px;
+
+  // left or right
+  grid-template-columns: 150px 150px 1fr;
+
+  // grid-template-areas:
+  //   "heading heading image"
+  //   "about about image"
+  //   "img img img"
+  //   "img img img"
+  //   "img img img";
+
+  &__heading {
+    @include flex-center(null, column);
+    padding-left: 1em;
+    align-self: center;
+    // align-items: flex-start;
+    // display: none;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    z-index: 2;
+    h1 {
+      font-size: 1.75em;
+      font-family: "Source Serif Pro", serif;
+      color: var(--heading-lcr);
+      // text-align: center;
+    }
+  }
+
+  // Image of the About Section
+  &__img {
+    // display: none;
+
+    grid-row: 3 / 4;
+    grid-column: 2 / 4;
+    z-index: 2;
+
+    width: 8em;
+  }
+
+  // About Section
+  &__about {
+    @include flex-center(space-evenly, column);
+    align-items: flex-start;
+    background: #462a4c;
+
+    padding: 5em 1em 0 1em;
+
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    // max-width: 26em;
+    // width: clamp(18em, 80vh, 30em);
+    width: 14em;
+    height: 20em;
+
+    p {
+      color: white;
+      font-family: var(--font-src);
+      font-size: 0.7em;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 0.75em;
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .home {
+    &__header {
+      h1 {
+        color: green;
+      }
+    }
+  }
+}
+
+
+
+
+
+.home {
+  display: grid;
+  // top or bottom
+  grid-template-rows: 8em 8em 10em 8em;
+
+  // left or right
+  grid-template-columns: 10em 2em 1fr;
+
+  padding: 0 2em;
+
+  &__heading {
+    // background-color: lightgreen;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    z-index: 2;
+  }
+
+  &__about {
+    background-color: var(--about-clr);
+
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
+  }
+
+  &__img {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+  }
+}
+
+.home__img {
+  background-color: var(--heading-clr);
+
+  width: 10em;
+}
